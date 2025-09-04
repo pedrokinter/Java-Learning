@@ -19,7 +19,7 @@ public class funcionarios003 {
         funcionarios.add(estagiario);
 
         for (Funcionario funcionario : funcionarios) {
-            System.out.println("O " + funcionario.obterNome() + " Recebe um salário de: " +  funcionario.calcularSalario());
+            System.out.println("O " + funcionario.obterNome() + " Recebe um salário de: R$" +  funcionario.calcularSalario());
             System.out.println("=-=-=-=-=-=-=-=-=-=-");
 
         }

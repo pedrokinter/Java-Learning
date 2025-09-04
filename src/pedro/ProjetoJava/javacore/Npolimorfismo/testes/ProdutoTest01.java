@@ -9,8 +9,8 @@ public class ProdutoTest01 {
         Computador computador = new Computador("pc do pedro", 4500);
         Tomate tomate = new Tomate("Tomate cereja ", 100);
 
-        CalculadoraImposto.calcularImposto(computador);
-        CalculadoraImposto.calcularImposto(tomate);
+        CalculadoraImposto.calcularImposto1(computador);
+        CalculadoraImposto.calcularImposto1(tomate);
 
     }
 }

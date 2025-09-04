@@ -15,7 +15,7 @@ public class CalculadoraImposto {
 
     }
 
-    public static void calcularImposto(Produto produto) {
+    public static void calcularImposto1(Produto produto) {
         System.out.println("Relatorio de imposto do: " + produto.getNome());
         double imposto = produto.calcularImposto();
         System.out.println("Imposto do " + produto.getNome() + ": " + imposto);

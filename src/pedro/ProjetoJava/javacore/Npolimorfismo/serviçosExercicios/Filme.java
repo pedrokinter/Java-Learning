@@ -21,6 +21,11 @@ public class Filme extends Midia {
         return duracao;
     }
 
+    @Override
+    public String pegarNome() {
+        return nome;
+    }
+
     public String getNome() {
         return nome;
     }

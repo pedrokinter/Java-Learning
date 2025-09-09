@@ -15,11 +15,14 @@ public class midia007 {
         Midia musica1 = new Musica("All The Stars", 3.52);
         Midia musica2 = new Musica("Nights", 5.00);
         Midia musica3 = new Musica("Jumpin", 1.32);
+        Midia musica4 = new Musica("OVERLY", 2.00);
 
-        ArrayList<Midia> musicas = new ArrayList<>();
+        ArrayList<Midia> musicas = new ArrayList<Midia>();
         musicas.add(musica1);
         musicas.add(musica2);
         musicas.add(musica3);
+        musicas.add(musica4);
+
         ArrayList<Midia> midias = new ArrayList<Midia>();
 
         midias.add(audiobook);
@@ -27,14 +30,16 @@ public class midia007 {
         midias.add(musica1);
         midias.add(musica2);
         midias.add(musica3);
+        midias.add(musica4);
         int cont = 0;
 
         for (Midia midia : midias) {
-            if (midias.stream().filter(midia1 -> midia1.equals(musicas.get(cont))).isParallel()) {
-                System.out.println(musicas);
-            }
+                if (midia.equals(musicas.get(cont))) {
+                    System.out.println(midia.pegarNome());
+                    cont++;
+                }
 
-
+                midias.stream().filter(midia1 -> midia.getDuracao().)
         }
     }
 }

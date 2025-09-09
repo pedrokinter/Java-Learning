@@ -21,7 +21,8 @@ public class Audiobook extends Midia {
         return duracao;
     }
 
-    public String getNome() {
+    @Override
+    public String pegarNome() {
         return nome;
     }
 

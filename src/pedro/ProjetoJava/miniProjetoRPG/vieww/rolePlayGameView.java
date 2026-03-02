@@ -95,6 +95,7 @@ public class rolePlayGameView {
         System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         Batalha.iniciar(guerreiro, mago);
         System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
+        System.out.println("PINTO ENORME");
 
     }
 }

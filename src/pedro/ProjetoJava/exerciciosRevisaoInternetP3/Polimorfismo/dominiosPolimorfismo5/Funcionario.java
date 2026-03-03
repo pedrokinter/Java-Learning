@@ -18,6 +18,7 @@ public abstract class Funcionario {
         System.out.println("CRM: " + this.crm);
         System.out.println("Especialidade: " + this.especialidade);
 
+
     }
 
 
@@ -26,7 +27,7 @@ public abstract class Funcionario {
     }
 
     public void setNome(String nome) {
-        if (nome == null && !nome.isEmpty()) {
+        if (nome == null || nome.isEmpty()) {
             System.out.println("Erro no nome!!");
             return;
         }
@@ -38,7 +39,7 @@ public abstract class Funcionario {
     }
 
     public void setCrm(String crm) {
-        if (crm == null && !crm.isEmpty()) {
+        if (crm == null || crm.isBlank()) {
             System.out.println("Erro no crm!!");
             return;
         }
@@ -50,7 +51,7 @@ public abstract class Funcionario {
     }
 
     public void setEspecialidade(String especialidade) {
-        if (especialidade == null && !especialidade.isEmpty()) {
+        if (especialidade == null || especialidade.isBlank()) {
             System.out.println("Erro no especialidade!!");
             return;
         }

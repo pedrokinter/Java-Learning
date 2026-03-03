@@ -19,8 +19,8 @@ public class CursoHibrido extends Curso {
 
     @Override
     public double calcularProgresso() {
-        double media1 = (double) videosAssistidos / videosTotais;
-        double media2 = (double) aulasFrequentadas / aulasTotais;
+        double media1 = (double) videosAssistidos / videosTotais * 100;
+        double media2 = (double) aulasFrequentadas / aulasTotais * 100;
         return (media1 + media2) / 2;
 
     }
@@ -43,7 +43,9 @@ public class CursoHibrido extends Curso {
     @Override
     public void emitirCertificado() {
         if (elegivelCertificado()){
-            System.out.println("Certificado do Curso hibrido emitido com sucesso!");
+            System.out.println("Certificado do curso hibrido emitido com sucesso!!");
+        } else {
+            System.out.println("O aluno não está elegivel para o certificado!!");
         }
     }
 
@@ -53,5 +55,53 @@ public class CursoHibrido extends Curso {
             return true;
         }
         return false;
+    }
+
+    public int getVideosAssistidos() {
+        return videosAssistidos;
+    }
+
+    public void setVideosAssistidos(int videosAssistidos) {
+        if (videosAssistidos < 0 ) {
+            System.out.println("Videos nulos");
+            return;
+        }
+        this.videosAssistidos = videosAssistidos;
+    }
+
+    public int getVideosTotais() {
+        return videosTotais;
+    }
+
+    public void setVideosTotais(int videosTotais) {
+        if (videosTotais < 0 ) {
+            System.out.println("Videos nulos");
+            return;
+        }
+        this.videosTotais = videosTotais;
+    }
+
+    public int getAulasFrequentadas() {
+        return aulasFrequentadas;
+    }
+
+    public void setAulasFrequentadas(int aulasFrequentadas) {
+        if (aulasFrequentadas < 0 ) {
+            System.out.println("Aulas nulos");
+            return;
+        }
+        this.aulasFrequentadas = aulasFrequentadas;
+    }
+
+    public int getAulasTotais() {
+        return aulasTotais;
+    }
+
+    public void setAulasTotais(int aulasTotais) {
+        if (aulasTotais< 0 ) {
+            System.out.println("Aulas totais nulos");
+            return;
+        }
+        this.aulasTotais = aulasTotais;
     }
 }

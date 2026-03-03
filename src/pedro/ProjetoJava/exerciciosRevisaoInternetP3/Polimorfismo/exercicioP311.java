@@ -2,6 +2,7 @@ package pedro.ProjetoJava.exerciciosRevisaoInternetP3.Polimorfismo;
 
 import pedro.ProjetoJava.exerciciosRevisaoInternetP3.Polimorfismo.dominiosPolimorfismo4.Desconto;
 import pedro.ProjetoJava.exerciciosRevisaoInternetP3.Polimorfismo.dominiosPolimorfismo4.Produto;
+import pedro.ProjetoJava.exerciciosRevisaoInternetP3.Polimorfismo.dominiosPolimorfismo4.ProdutoFisico;
 import pedro.ProjetoJava.exerciciosRevisaoInternetP3.Polimorfismo.servicosPolimorfismo4.Eletronico;
 import pedro.ProjetoJava.exerciciosRevisaoInternetP3.Polimorfismo.servicosPolimorfismo4.LivroDigital;
 import pedro.ProjetoJava.exerciciosRevisaoInternetP3.Polimorfismo.servicosPolimorfismo4.LivroFisico;
@@ -15,14 +16,18 @@ public class exercicioP311 {
                 "15x15");
         LivroDigital livroDigital = new LivroDigital("fanfic aleatoria", 5, 1000);
 
+
         Produto[] produto = new Produto[]{eletronico, roupa, livroFisico, livroDigital};
 
+        System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
         for (Produto produto1 : produto) {
             if(produto1 != null) {
-                if (produto1 instanceof Desconto desconto) {
-                    System.out.println("Produto com desconto aplicado: R$" + desconto.aplicarDesconto(100));
-                }
                 produto1.exibirProduto();
+                if (produto1 instanceof Desconto desconto) {
+                    System.out.println("Valor do Desconto a ser aplicado: R$" + desconto.aplicarDesconto(produto1.getPreco()));
+                    System.out.println("Tipo do desconto: " + desconto.getTipoDesconto());
+                }
+                System.out.println("=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
 
             }
         }

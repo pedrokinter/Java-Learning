@@ -8,6 +8,8 @@ import pedro.ProjetoJava.exerciciosRevisaoInternetP3.Polimorfismo.servicosPolimo
 import pedro.ProjetoJava.exerciciosRevisaoInternetP3.Polimorfismo.servicosPolimorfismo5.MedicoCirurgiao;
 import pedro.ProjetoJava.exerciciosRevisaoInternetP3.Polimorfismo.servicosPolimorfismo5.MedicoClinico;
 
+import java.util.Arrays;
+
 public class exercicioP312 {
     public static void main(String[] args) {
         MedicoClinico medicoClinico = new MedicoClinico("Matheus", "1324141415", "Clinico",
@@ -19,6 +21,10 @@ public class exercicioP312 {
         Enfermeiro enfermeiro = new Enfermeiro("Gabriel", "1425667889", "Enfermeiro");
 
         Funcionario[] funcionarios = new Funcionario[]{medicoClinico, medicoCirurgiao, enfermeiro};
+        String[] a = new String[5];
+        a[0] = "remedio1";
+        a[1] = "remedio2";
+        a[2] = "remedio3";
 
         for (Funcionario funcionario : funcionarios) {
             if (funcionario != null) {
@@ -29,6 +35,13 @@ public class exercicioP312 {
                     cirurgico.realizarCirurgia("Coração");
                     System.out.println("Total de cirurgias do " + funcionario.getNome() + ": " +
                             cirurgico.getTotalCirurgias());
+                }
+                if (funcionario instanceof Prescricivel prescricivel) {
+
+                    prescricivel.prescreverMedicamento("ibipirona");
+                    prescricivel.prescreverMedicamento("ibuprofone");
+                    prescricivel.prescreverMedicamento("amoxilina");
+                    System.out.println(Arrays.toString(prescricivel.getPrescricoes()));
                 }
                 System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-");
             }

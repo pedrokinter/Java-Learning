@@ -9,10 +9,6 @@ public class MedicoClinico extends Medico implements Prescricivel {
         super(nome, crm, especialidade, plantoes);
     }
 
-    @Override
-    public void registrarPlantoes() {
-        super.registrarPlantoes();
-    }
 
     @Override
     public void realizarAtendimento(String paciente) {
@@ -21,9 +17,8 @@ public class MedicoClinico extends Medico implements Prescricivel {
 
     @Override
     public void prescreverMedicamento(String medicamento) {
-
-        for (int i = 0; i < 1; i++) {
-            if (medicamentos[i] != null) {
+        for (int i = 0; i < medicamentos.length; i++) {
+            if (medicamentos[i] == null) {
                 medicamentos[i] = medicamento;
             }
         }
@@ -32,6 +27,8 @@ public class MedicoClinico extends Medico implements Prescricivel {
 
     @Override
     public String[] getPrescricoes() {
+        System.out.println("O Médico Clinico está Prescrevendo medicamentos.., são eles: ");
+
         return this.medicamentos;
     }
 }

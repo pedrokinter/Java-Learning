@@ -17,18 +17,27 @@ public class ContaInvestimento extends ContaBancaria implements Tributavel {
 
     @Override
     public double sacar(double valor) {
-        return 0;
+        if (valor < 0) {
+            System.out.println("erro, não pode valor menor que 0");
+            return getSaldo();
+        }
+        setSaldo(getSaldo() - valor);
+        return getSaldo();
     }
 
     @Override
     public double depositar(double valor) {
-        return 0;
+        if (valor < 0) {
+            System.out.println("erro, não pode valor menor que 0");
+            return getSaldo();
+        }
+        setSaldo(getSaldo() + valor);
+        return getSaldo();
     }
 
     @Override
     public double calcularImposto() {
-        double imposto = 0.15 * this.taxaRendimento;
-        return this.taxaRendimento - imposto;
+        return 0.15 * this.taxaRendimento;
     }
 
     @Override

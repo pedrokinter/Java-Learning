@@ -17,7 +17,6 @@ public abstract class Produto {
         System.out.println("Preco: R$" + getPreco());
         System.out.println("Estoque: " + getEstoque());
         System.out.println("Frete: R$" + calcularFrete());
-        System.out.println("=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-==-=-=-=-=-");
     }
 
     public String getNome() {
@@ -25,7 +24,7 @@ public abstract class Produto {
     }
 
     public void setNome(String nome) {
-        if (nome != null && !nome.isEmpty()) {
+        if (nome == null || nome.isEmpty()) {
             System.out.println("Erro no nome!!");
             return;
         }

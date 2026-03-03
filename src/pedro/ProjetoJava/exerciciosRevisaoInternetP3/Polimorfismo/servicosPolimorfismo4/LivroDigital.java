@@ -15,7 +15,9 @@ public class LivroDigital extends Produto implements Desconto {
 
     @Override
     public double aplicarDesconto(double valor) {
-        return 0.20 * valor;
+
+        double desconto = 0.20 * valor;
+        return getPreco() - desconto;
     }
 
     @Override

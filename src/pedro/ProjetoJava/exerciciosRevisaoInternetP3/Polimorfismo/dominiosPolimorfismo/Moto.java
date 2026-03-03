@@ -11,9 +11,10 @@ public class Moto extends Veiculo{
     @Override
     public double calcularFrete(double distanciaKm) {
         if (bau){
-            return distanciaKm * 0.65;
+            double valorBase = distanciaKm * 0.3;
+            return valorBase + (valorBase * 0.10);
         }
-        return distanciaKm * 0.5;
+        return distanciaKm * 0.3;
     }
 
     @Override

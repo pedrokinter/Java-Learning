@@ -6,14 +6,12 @@ import pedro.ProjetoJava.exerciciosRevisaoInternetP3.Polimorfismo.dominiosPolimo
 
 public class MedicoCirurgiao extends Medico implements Prescricivel, Cirurgico {
     private int cirurgias;
+    private String[] medicamentos = new String[5];
     public MedicoCirurgiao(String nome, String crm, String especialidade, int plantoes) {
         super(nome, crm, especialidade, plantoes);
     }
 
-    @Override
-    public void registrarPlantoes() {
-        super.registrarPlantoes();
-    }
+
 
     @Override
     public void realizarAtendimento(String paciente) {
@@ -22,13 +20,17 @@ public class MedicoCirurgiao extends Medico implements Prescricivel, Cirurgico {
 
     @Override
     public void prescreverMedicamento(String medicamento) {
-        System.out.println("Prescrevendo medicamentos.., são eles: " + medicamento);
-
+        for (int i = 0; i < medicamentos.length; i++) {
+            if (medicamentos[i] == null) {
+                medicamentos[i] = medicamento;
+            }
+        }
     }
 
     @Override
     public String[] getPrescricoes() {
-        return new String[0];
+        System.out.println("O Médico Cirurgiao está Prescrevendo medicamentos.., são eles: ");
+        return medicamentos;
     }
 
 
@@ -42,4 +44,6 @@ public class MedicoCirurgiao extends Medico implements Prescricivel, Cirurgico {
     public int getTotalCirurgias() {
         return this.cirurgias;
     }
+
+
 }

@@ -11,7 +11,8 @@ public class Van extends Veiculo{
     @Override
     public double calcularFrete(double distanciaKm) {
         if (climatizado) {
-            return distanciaKm * 0.20;
+            double valorBase = distanciaKm * 0.5;
+            return valorBase + (valorBase * 0.15);
         }
         return distanciaKm * 0.5;
     }
@@ -21,11 +22,12 @@ public class Van extends Veiculo{
         return "Van";
     }
 
+    public void setClimatizado(boolean climatizado) {
+        this.climatizado = climatizado;
+    }
+
     public boolean isClimatizado() {
         return climatizado;
     }
 
-    public void setClimatizado(boolean climatizado) {
-        this.climatizado = climatizado;
-    }
 }

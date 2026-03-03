@@ -16,8 +16,8 @@ public class Enfermeiro extends Funcionario implements Prescricivel {
 
     @Override
     public void prescreverMedicamento(String medicamento) {
-        for (int i = 0; i < 1; i++) {
-            if (medicamentos[i] != null) {
+        for (int i = 0; i < 2; i++) {
+            if (medicamentos[i] == null) {
                 medicamentos[i] = medicamento;
             }
         }
@@ -26,6 +26,7 @@ public class Enfermeiro extends Funcionario implements Prescricivel {
 
     @Override
     public String[] getPrescricoes() {
-        return this.medicamentos;
+        System.out.println("O enfermeiro está Prescrevendo medicamentos.., são eles: ");
+        return medicamentos;
     }
 }

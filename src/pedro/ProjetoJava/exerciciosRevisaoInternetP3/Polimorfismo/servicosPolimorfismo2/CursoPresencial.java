@@ -3,18 +3,18 @@ package pedro.ProjetoJava.exerciciosRevisaoInternetP3.Polimorfismo.servicosPolim
 import pedro.ProjetoJava.exerciciosRevisaoInternetP3.Polimorfismo.dominiosPolimorfismo2.Curso;
 
 public class CursoPresencial extends Curso {
-    private int AulasFrequentadas;
-    private int TotalAulas;
+    private int aulasFrequentadas;
+    private int totalAulas;
 
     public CursoPresencial(String titulo, int cargaHoraria, String aluno, int aulasFrequentadas, int totalAulas) {
         super(titulo, cargaHoraria, aluno);
-        AulasFrequentadas = aulasFrequentadas;
-        TotalAulas = totalAulas;
+        this.aulasFrequentadas = aulasFrequentadas;
+        this.totalAulas = totalAulas;
     }
 
     @Override
     public double calcularProgresso() {
-        return (double) AulasFrequentadas  / TotalAulas * 100;
+        return (double) aulasFrequentadas / totalAulas * 100;
     }
 
     @Override
@@ -36,7 +36,8 @@ public class CursoPresencial extends Curso {
     public void emitirCertificado() {
         if (elegivelCertificado()){
             System.out.println("Certificado do curso presencial emitido com sucesso!!");
-
+        } else {
+            System.out.println("O aluno não está elegivel para o certificado!!");
         }
     }
 
@@ -46,5 +47,29 @@ public class CursoPresencial extends Curso {
             return true;
         }
         return false;
+    }
+
+    public int getAulasFrequentadas() {
+        return aulasFrequentadas;
+    }
+
+    public void setAulasFrequentadas(int aulasFrequentadas) {
+        if (aulasFrequentadas < 0){
+            System.out.println("erro, aulas frequentadas nulo");
+            return;
+        }
+        this.aulasFrequentadas = aulasFrequentadas;
+    }
+
+    public int getTotalAulas() {
+        return totalAulas;
+    }
+
+    public void setTotalAulas(int totalAulas) {
+        if (totalAulas < 0){
+            System.out.println("erro, total de aulas nulo");
+            return;
+        }
+        this.totalAulas = totalAulas;
     }
 }

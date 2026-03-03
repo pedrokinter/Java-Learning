@@ -9,13 +9,10 @@ public class Roupa extends ProdutoFisico implements Desconto {
     }
 
     @Override
-    public double calcularFrete() {
-        return super.calcularFrete();
-    }
-
-    @Override
     public double aplicarDesconto(double valor) {
-        return (0.30 * valor);
+        double desconto = 0.30 * valor;
+        return getPreco() - desconto;
+
     }
 
     @Override

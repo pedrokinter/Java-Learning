@@ -3,7 +3,7 @@ package pedro.ProjetoJava.exerciciosRevisaoInternetP3.Polimorfismo.dominiosPolim
 public abstract class ContaBancaria {
     private String titular;
     private String numeroConta;
-    protected double saldo;
+    private double saldo;
 
     public ContaBancaria(String titular, String numeroConta, double saldo) {
         this.titular = titular;
@@ -47,7 +47,7 @@ public abstract class ContaBancaria {
     }
 
     public void setSaldo(double saldo) {
-        if (saldo < 0)
+        if (saldo < -500)
             return;
         this.saldo = saldo;
     }

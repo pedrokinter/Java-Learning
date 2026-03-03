@@ -8,21 +8,27 @@ public class ContaPoupanca extends ContaBancaria {
     }
 
     public double rendimentoMensal(double taxa) {
-        return taxa += this.saldo;
+        return getSaldo() * (taxa/100);
     }
 
     @Override
     public double sacar(double valor) {
         if (valor <= 0){
             System.out.println("Valor para saque da conta Poupança negativo!!");
-            return this.saldo;
+            return getSaldo();
         }
-        return 0;
+        setSaldo(getSaldo() - valor);
+        return getSaldo();
     }
 
     @Override
     public double depositar(double valor) {
-        return 0;
+        if (valor < 0) {
+            System.out.println("erro, não pode valor menor que 0");
+            return getSaldo();
+        }
+        setSaldo(getSaldo() + valor);
+        return getSaldo();
     }
 
 

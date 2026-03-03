@@ -15,7 +15,8 @@ public class Eletronico extends ProdutoFisico implements Desconto {
 
     @Override
     public double aplicarDesconto(double valor) {
-        return 0.10 * valor;
+        double desconto = valor * 0.10;
+        return getPreco() - desconto; // tava pensando em deixar assim ou deixar get preco * valor
     }
 
     @Override

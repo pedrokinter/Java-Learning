@@ -6,10 +6,12 @@ public class Transportadora {
     private Veiculo[] veiculos = new Veiculo[6];
 
     public void adicionarVeiculo(Veiculo veiculo, int posicao) {
-        for (int i = 0; i < 1; i++) {
-            if (veiculo != null || posicao < 0 || posicao > veiculos.length) {
-                veiculos[posicao] = veiculo;
+        for (int i = 0; i < veiculos.length; i++) {
+            if (veiculo == null || posicao < 0 || posicao >= veiculos.length) {
+                System.out.println("POSIÇÃO JA OCUPADA");
+                return;
             }
+            veiculos[posicao] = veiculo;
         }
     }
 

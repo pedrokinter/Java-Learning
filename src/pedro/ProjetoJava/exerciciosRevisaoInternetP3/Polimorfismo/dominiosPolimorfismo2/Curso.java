@@ -19,7 +19,7 @@ public abstract class Curso implements Avaliavel, Certificavel{
     }
 
     public void setTitulo(String titulo) {
-        if (titulo != null && titulo.isBlank()) {
+        if (titulo == null || titulo.isBlank()) {
             return;
         }
         this.titulo = titulo;
@@ -41,7 +41,7 @@ public abstract class Curso implements Avaliavel, Certificavel{
     }
 
     public void setAluno(String aluno) {
-        if (aluno != null && aluno.isBlank()) {
+        if (aluno == null || aluno.isBlank()) {
             return;
         }
         this.aluno = aluno;

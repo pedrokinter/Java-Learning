@@ -41,11 +41,38 @@ public class CursoRemoto extends Curso {
         }
     }
 
+    public int getVideosAssistidos() {
+        return videosAssistidos;
+    }
+
+    public void setVideosAssistidos(int videosAssistidos) {
+        if (videosAssistidos < 0){
+            System.out.println("erro, videos nulos");
+            return;
+        }
+        this.videosAssistidos = videosAssistidos;
+    }
+
+    public int getTotalVideos() {
+        return totalVideos;
+    }
+
+    public void setTotalVideos(int totalVideos) {
+        if (totalVideos < 0){
+            System.out.println("erro, total  videos nulos");
+            return;
+        }
+        this.totalVideos = totalVideos;
+    }
+
     @Override
     public boolean elegivelCertificado() {
         if (calcularProgresso() >= 75){
             return true;
         }
         return false;
+
+
+
     }
 }

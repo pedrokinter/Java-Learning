@@ -1,6 +1,6 @@
 package pedro.ProjetoJava.exerciciosRevisaoInternetP3.Polimorfismo.dominiosPolimorfismo4;
 
-public class ProdutoFisico extends Produto {
+public abstract class ProdutoFisico extends Produto {
     private double pesoKg;
     private String dimensoesCm;
 

@@ -1,5 +1,6 @@
 package pedro.ProjetoJava.javacore.Oexception.exerciciosMain;
 
+import pedro.ProjetoJava.javacore.Oexception.dominios7.ErroImportacaoException;
 import pedro.ProjetoJava.javacore.Oexception.dominios7.ImportadorProduto;
 import pedro.ProjetoJava.javacore.Oexception.dominios7.RepositorioProduto;
 import pedro.ProjetoJava.javacore.Oexception.dominios7.ServicoProduto;
@@ -8,21 +9,18 @@ import java.sql.SQLException;
 
 public class exercicio07 {
     public static void main(String[] args) {
-        ImportadorProduto imp = new ImportadorProduto();
-        RepositorioProduto banco = new RepositorioProduto();
+        ImportadorProduto importador = new ImportadorProduto();
+        RepositorioProduto repositorio = new RepositorioProduto();
+        ServicoProduto servico = new ServicoProduto();
 
-        imp.setNome("produto servico");
-        ServicoProduto sp = new ServicoProduto(imp);
-        ImportadorProduto imp2 = new ImportadorProduto();
-
-
-        imp.setPreco(100);
-        imp.setQuantidade(10);
-
-        try{
-            banco.bancoDeDados();
-        } catch (SQLException e) {
-            System.out.println("Ocorreu um erro no banco de dados! " + e.getMessage());
+        try {
+            importador.take();
+        } catch (ErroImportacaoException e) {
+            Throwable cause = e;
+            while (cause != null) {
+                System.out.println(cause.getMessage()); // imprime a mensagem atual
+                cause = cause.getCause(); // desce para a prox msg
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

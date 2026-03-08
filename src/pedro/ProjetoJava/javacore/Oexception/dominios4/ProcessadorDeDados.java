@@ -18,7 +18,7 @@ public class ProcessadorDeDados {
                 }
             } catch (NumberFormatException | ArrayIndexOutOfBoundsException | NullPointerException e) {
                 System.out.println("Erro!! o tipo do erro é: " + e.getClass().getSimpleName());
-                throw e;
+
             }
     }
 

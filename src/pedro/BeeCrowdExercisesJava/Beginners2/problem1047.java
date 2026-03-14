@@ -10,29 +10,24 @@ public class problem1047 {
         int FHOUR = in.nextInt();
         int FMINUTE = in.nextInt();
 
-        if (IHOUR > 23 ) {
+        if (IHOUR > 23 || FHOUR > 23 || IHOUR < 0 || FHOUR < 0) {
             throw new IllegalArgumentException();
         }
 
-        if (IMINUTE < 1) {
+        if (IMINUTE < 1 || FMINUTE < 1 || IMINUTE > 59 || FMINUTE > 59) {
             throw new IllegalArgumentException();
         }
 
-        if (IHOUR == FHOUR) {
-            for (int i = 0; i < 24; i++) {
-                IHOUR++;
-                if (IHOUR == 24) {
-                    IHOUR = 0;
-                }
-            }
-            int DHOUR = 24;
-        }
+        // 7 10
+        // 8 09
 
-        System.out.println(IHOUR);
 
-//        int DHOUR = FHOUR - IHOUR;
-//        int DMINUTE = FMINUTE - IMINUTE;
-//
-//        System.out.println("O JOGO DUROU " +DHOUR+ " HORA(S) E " +DMINUTE+ " MINUTO(S)" );
+        int DHOUR = FHOUR - IHOUR;
+        int DMINUTE = (DHOUR % 3600);
+        DMINUTE /= 60;
+
+
+
+        System.out.println("O JOGO DUROU " + DHOUR + " HORAS(S) E " + DMINUTE + " MINUTO(S)");
     }
 }

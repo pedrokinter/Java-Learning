@@ -1,4 +1,4 @@
-package pedro.ProjetoJava.javacore.Ycollections.test;
+package pedro.ProjetoJava.javacore.Ycollections.test.tests;
 
 import pedro.ProjetoJava.javacore.Ycollections.test.Dominios.Smartphone;
 

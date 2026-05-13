@@ -29,14 +29,13 @@ public class Smartphone {
     }
 
 
+
     // se x.equals(y) == true, y.hashCode() == x.hashCode()
     // y.hashCode() == x.hashCode() não diz que necessariamente o equals de y.equals(x) tem que ser true
 
     // x.equals(y) == false -> hashCode tem que ser diferente (que nem abaixo)
     // y.hashCode() != x.hashCode() -> x.equals(y) deverá ser false. (algo muito errado no código)
     // equals e hashcode tem que estar em sintonia (um mesmo atributo para gerar equals e hashcode)
-
-
     @Override
     public int hashCode() {
         return numeroDeLote == null  ? 0 : numeroDeLote.hashCode(); //está gerando um hashcode para mim

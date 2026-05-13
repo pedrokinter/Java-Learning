@@ -16,8 +16,16 @@ public class SmartphoneListTest01 {
         lista.add(smartphone);
         lista.add(smartphone2);
         lista.add(smartphone3);
+
         for (Smartphone smartphones : lista) {
             System.out.println(smartphones);
         }
+
+        Smartphone s4 = new Smartphone("iphone", "1ABDE123");
+
+        System.out.println(lista.contains(s4));
+        int indexS4 = lista.indexOf(s4);
+        System.out.println(indexS4);
+
     }
 }

@@ -11,47 +11,42 @@ public class Agenda {
     }
 
     public void adicionarContato(Contato contato) {
-        if (contato != null) {
-            for (Contato contato1 : contatos) {
-                if (contato1.getNome().equals(contato.getNome()) && contato1.getTelefone().equals(contato.getTelefone())) {
-                    return;
-                }
-            }
+        if (contato != null &&  !contatos.contains(contato)) {
             contatos.add(contato);
         } else {
-            throw new IllegalArgumentException("Lista vazia ou contato nulo!");
+            throw new IllegalArgumentException("Contato nulo!");
         }
     }
 
-    public void removerContatoPorTelefone(String telefone) {
-        if (contatos != null) {
-            for (Contato contato1 : contatos) {
-                if (contato1.getTelefone().equals(telefone)) {
-                    contatos.remove(contato1);
-                    break;
-                }
+    public List<Contato> removerContatoPorTelefone(String telefone) {
+        if (telefone == null || telefone.isBlank()) {
+            throw new IllegalArgumentException("Telefone nulo ou vazio!");
+        }
+
+        for (Contato contato1 : contatos) {
+            if (contato1.getTelefone().equals(telefone)) {
+                contatos.remove(contato1);
+                break;
             }
-            // contatos.removeIf(contato1 -> contato1.getTelefone().equals(contato.getTelefone()));
-        }  else {
-            throw new IllegalArgumentException("Lista vazia ou contato nulo, impossivel remover por telefone!");
         }
+        return contatos;
     }
 
-    public void buscarContatoPorNome(String nome) {
-        // inves de buscar com o objeto direto, buscar com a string do nome
+    public List<Contato> buscarContatoPorNome(String nome) {
+        if (nome == null || nome.isBlank()) {
+            throw new IllegalArgumentException("Nome nulo ou vazio!");
+        }
         List<Contato> contatosPorNome = new ArrayList<>();
-        if (contatos != null) {
-            for (Contato contatoBuscado : contatos) {
-                if (contatoBuscado.getNome().toLowerCase().contains(nome.toLowerCase())) {
-                    contatosPorNome.add(contatoBuscado);
-                }
+
+
+        for (Contato contatoBuscado : contatos) {
+            if (contatoBuscado.getNome().toLowerCase().contains(nome.toLowerCase())) {
+                contatosPorNome.add(contatoBuscado);
             }
-        } else {
-            throw new IllegalArgumentException("Lista vazia ou contato nulo!, impossivel buscar por nome");
         }
 
-        for (Contato contatoNomeBuscado : contatosPorNome) {
-            System.out.println(contatoNomeBuscado);
-        }
+
+        return contatosPorNome;
     }
+
 }

@@ -2,6 +2,8 @@ package pedro.ProjetoJava.javacore.Ycollections.test.exercicios.main;
 
 import pedro.ProjetoJava.javacore.Ycollections.test.exercicios.dominios.Produto;
 
+import java.util.Collections;
+
 public class ex003 {
     public static void main(String[] args) {
         Produto produto = new Produto("Arroz", 30.0, 5);
@@ -16,10 +18,8 @@ public class ex003 {
         Produto.adicionarProduto(produto3);
         Produto.adicionarProduto(produto4);
 
-        // tirar do estatico
-        // tirar lista de dentro da classe
-        // mas deixar os metodos
-        // talvez criar uma class de lista somente pra isso
+        Produto.removerProdutoCodigo(10);
+        System.out.println(Produto.retornarListaValorAcima(10));
 
         System.out.println(Produto.getProdutos());
     }

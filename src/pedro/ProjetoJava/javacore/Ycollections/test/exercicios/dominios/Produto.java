@@ -1,15 +1,13 @@
 package pedro.ProjetoJava.javacore.Ycollections.test.exercicios.dominios;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Produto {
     private String nome;
     private double preco;
     private int codigo;
 
-    private static List<Produto> produtos = new ArrayList<>();
+    private static List<Produto> produtos = new ArrayList<>(); // colocar lista em outra classe ou no main
 
     public Produto(String nome, double preco, int codigo) {
         this.nome = nome;
@@ -46,16 +44,14 @@ public class Produto {
     }
 
     public static void adicionarProduto(Produto produto) {
-        if (produto != null) {
-            for (int i = 0; i <= produtos.size(); i++) {
-                if (!produtos.contains(produto)) {
-                    produtos.add(produto);
-                }
-            }
+        if (produto != null && !produtos.contains(produto)) {
+            produtos.add(produto);
+        } else {
+            throw new IllegalArgumentException("produto já existente ou nulo!");
         }
     }
 
-    public void removerProdutoCodigo(int codigo) {
+    public static void removerProdutoCodigo(int codigo) {
         if (codigo >= 0) {
             for (int i = 0; i < produtos.size(); i++) {
                 if (produtos.get(i).getCodigo() == codigo) {
@@ -66,26 +62,25 @@ public class Produto {
         }
     }
 
-    public void retornarListaValorAcima(double preco) {
+    public static List<Produto> retornarListaValorAcima(double preco) {
         List<Produto> valorAcima = new ArrayList<>();
-        if (produtos != null) {
             for (Produto produto1 : produtos) {
-                if (produto1.getPreco() == preco) {
+                if (produto1.getPreco() > preco) {
                     valorAcima.add(produto1);
                 }
             }
-        }
 
-        for (Produto produtoValorAcima : valorAcima) {
-            System.out.println(produtoValorAcima);
-        }
+
+        valorAcima.sort(Comparator.comparing(Produto::getPreco)); // entender isso aqui
+
+        return valorAcima;
     }
 
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Produto produto = (Produto) o;
-        return Objects.equals(codigo, produto.codigo);
+        return this.codigo == produto.codigo;
     }
 
     @Override
@@ -96,7 +91,9 @@ public class Produto {
     @Override
     public String toString() {
         return "Produto{" +
-                "produtos=" + produtos +
+                "nome='" + nome + '\'' +
+                ", preco=" + preco +
+                ", codigo=" + codigo +
                 '}';
     }
 }

@@ -6,9 +6,9 @@ import pedro.ProjetoJava.javacore.Ycollections.test.exercicios.dominios.Turma;
 public class ex007 {
     public static void main(String[] args) {
         Estudante estudante1 = new Estudante("Pedro", 12, 8.6);
-        Estudante estudante2 = new Estudante("Ana", 12, 2.0);
-        Estudante estudante3 = new Estudante("Kayke", 12, 9);
-        Estudante estudante4 = new Estudante("Wesley", 12, 4.5);
+        Estudante estudante2 = new Estudante("Ana", 14, 2.0);
+        Estudante estudante3 = new Estudante("Kayke", 28, 9);
+        Estudante estudante4 = new Estudante("Wesley", 102, 4.5);
         Estudante estudante5 = new Estudante("Paulo", 10, 3.0);
         Estudante estudante6 = new Estudante("Patricio", 8, 10);
         Estudante estudante7 = new Estudante("Gabriel", 14, 6.5);
@@ -24,11 +24,11 @@ public class ex007 {
 
 
         System.out.println("----------------------");
-        turma.aprovados();
+        System.out.println(turma.aprovados());
         System.out.println("----------------------");
-        turma.reprovados();
+        System.out.println(turma.reprovados());
         System.out.println("----------------------");
-        turma.calcularMedia();
+        System.out.println(turma.calcularMedia());
 
     }
 }

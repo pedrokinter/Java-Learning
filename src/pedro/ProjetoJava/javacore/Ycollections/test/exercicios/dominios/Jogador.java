@@ -6,6 +6,9 @@ public class Jogador  implements Comparable<Jogador>{
 
     public Jogador(String apelido, int pontuacao) {
         this.apelido = apelido;
+        if (pontuacao < 0) {
+            throw new IllegalArgumentException("pontuação menor que zero!");
+        }
         this.pontuacao = pontuacao;
     }
 
@@ -35,9 +38,7 @@ public class Jogador  implements Comparable<Jogador>{
 
     @Override
     public int compareTo(Jogador o) {
-        if (this.pontuacao < 0 || o.getPontuacao() < 0)  {
-            throw new IllegalArgumentException("PONTUAÇÃO NEGATIVA!!!");
-        }
+
         return Integer.compare(o.pontuacao, this.pontuacao);
     }
 }

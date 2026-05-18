@@ -2,6 +2,7 @@ package pedro.ProjetoJava.javacore.Ycollections.test.exercicios.dominios;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Tarefa implements Comparable<Tarefa> {
@@ -48,14 +49,9 @@ public class Tarefa implements Comparable<Tarefa> {
                 '}';
     }
 
-    public static void retornarListasOrdenadas(List<Tarefa> tarefas) {
+    public static ResultadoTarefas retornarListasOrdenadas(List<Tarefa> tarefas) {
         List <Tarefa> tarefasConcluidas = new ArrayList<>();
         List <Tarefa> tarefasPendentes = new ArrayList<>();
-
-        if (tarefas.isEmpty()) {
-            System.out.println("Nenhuma tarefa foi encontrada");
-            return;
-        }
 
         for (Tarefa tarefa : tarefas) {
             if(tarefa.isConcluida()){
@@ -65,18 +61,10 @@ public class Tarefa implements Comparable<Tarefa> {
             }
         }
 
-        System.out.println("Tarefas concluidas:  ");
-        for (Tarefa tarefaConcluida : tarefasConcluidas) {
-            System.out.print(tarefaConcluida.getTitulo() + ", ");
-        }
+        Collections.sort(tarefasConcluidas);
+        Collections.sort(tarefasPendentes);
 
-        System.out.println();
-        System.out.println("---------");
-
-        System.out.println("Tarefas pendentes: ");
-        for (Tarefa tarefaPendente : tarefasPendentes) {
-            System.out.print(tarefaPendente.getTitulo() + ", ");
-        }
+        return new ResultadoTarefas(tarefasConcluidas, tarefasPendentes);
     }
 
     @Override

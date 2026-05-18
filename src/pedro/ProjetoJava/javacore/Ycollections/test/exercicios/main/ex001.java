@@ -17,9 +17,11 @@ public class ex001 {
 
         Estudante teste =  new Estudante("burro", 10, 1.0);
         Estudante pedro =  new Estudante("Pedro", 12, 8.6);
+        Estudante pablo =  new Estudante("Pablo", 29, 7.6);
 
         Estudante.verificarEstudante(teste, estudantes);
         Estudante.verificarEstudante(pedro, estudantes);
+        Estudante.verificarEstudante(pablo, estudantes);
 
         System.out.println("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-");
 

@@ -1,5 +1,6 @@
 package pedro.ProjetoJava.javacore.Ycollections.test.exercicios.main;
 
+import pedro.ProjetoJava.javacore.Ycollections.test.exercicios.dominios.ResultadoTarefas;
 import pedro.ProjetoJava.javacore.Ycollections.test.exercicios.dominios.Tarefa;
 
 import java.time.LocalDate;
@@ -22,9 +23,14 @@ public class ex004 {
         for (Tarefa tarefa : tarefas) {
             System.out.println(tarefa);
         }
-        System.out.println();
 
-        Tarefa.retornarListasOrdenadas(tarefas); // eu sei que aqui provavelmente o certo é criar uma lista privada
+        System.out.println("----------------------------------");
+
+        ResultadoTarefas resultado = Tarefa.retornarListasOrdenadas(tarefas);
+        System.out.println(resultado.getConcluidas());
+        System.out.println(resultado.getPendentes());
+
+        // eu sei que aqui provavelmente o certo é criar uma lista privada
         // dentro de tarefa e depois criar um objeto de tarefa que va receber essa lista, mas desse jeito fica muito
         // mais agradavel de fazer
     }

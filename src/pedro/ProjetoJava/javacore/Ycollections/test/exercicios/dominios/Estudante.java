@@ -15,16 +15,11 @@ public class Estudante implements Comparable<Estudante> {
     }
 
     public static void verificarEstudante(Estudante aluno, List<Estudante> estudantes) {
-        int i = 0;
-        for (Estudante estudante : estudantes) {
-            i = estudantes.indexOf(aluno);
-        }
-        if (i == -1) {
-            System.out.println("Estudante apresentado não está na lista! ");
-        } else {
-            System.out.println("Estudante apresentado  ESTÁ na lista! ");
-
-        }
+        if (estudantes.contains(aluno)) {
+                System.out.println("Estudante apresentado  ESTÁ na lista! ");
+            } else {
+                System.out.println("Estudante apresentado não está na lista! ");
+            }
     }
 
     public String getNome() {

@@ -12,12 +12,14 @@ public class ex005 {
         jogadores.add(new Jogador("Pablo", 30));
         jogadores.add(new Jogador("Petrucio", 35));
         jogadores.add(new Jogador("Paulo", 40));
-        jogadores.add(new Jogador("Patricio", -1));
+        jogadores.add(new Jogador("Patricio", 1));
 
         Collections.sort(jogadores);
-
+        int i = 0;
         for (Jogador jogador : jogadores) {
-            System.out.println(jogador);
+            i++;
+            System.out.println(i+ "º " + jogador);
+
         }
     }
 }

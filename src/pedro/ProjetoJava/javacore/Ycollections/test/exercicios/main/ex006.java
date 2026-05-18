@@ -18,13 +18,13 @@ public class ex006 {
         agenda.adicionarContato(contato3);
         agenda.adicionarContato(contato4);
 
-        agenda.buscarContatoPorNome("Pedro");
+        System.out.println(agenda.buscarContatoPorNome("Pedro"));
 
         System.out.println("--------");
 
-        agenda.removerContatoPorTelefone("(15) 3384-5184");
+        System.out.println(agenda.removerContatoPorTelefone("(15) 3384-5184"));
 
-        agenda.buscarContatoPorNome("Pedro");
+        System.out.println(agenda.buscarContatoPorNome("Pedro"));
 
     }
 }

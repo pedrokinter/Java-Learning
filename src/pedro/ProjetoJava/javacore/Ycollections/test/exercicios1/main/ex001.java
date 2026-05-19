@@ -1,6 +1,6 @@
-package pedro.ProjetoJava.javacore.Ycollections.test.exercicios.main;
+package pedro.ProjetoJava.javacore.Ycollections.test.exercicios1.main;
 
-import pedro.ProjetoJava.javacore.Ycollections.test.exercicios.dominios.Estudante;
+import pedro.ProjetoJava.javacore.Ycollections.test.exercicios1.dominios.Estudante;
 
 import java.util.ArrayList;
 import java.util.Collections;

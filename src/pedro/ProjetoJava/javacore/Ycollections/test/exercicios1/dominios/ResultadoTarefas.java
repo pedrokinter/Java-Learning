@@ -1,4 +1,4 @@
-package pedro.ProjetoJava.javacore.Ycollections.test.exercicios.dominios;
+package pedro.ProjetoJava.javacore.Ycollections.test.exercicios1.dominios;
 
 import java.util.List;
 

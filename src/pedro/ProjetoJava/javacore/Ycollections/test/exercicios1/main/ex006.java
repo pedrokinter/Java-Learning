@@ -1,7 +1,7 @@
-package pedro.ProjetoJava.javacore.Ycollections.test.exercicios.main;
+package pedro.ProjetoJava.javacore.Ycollections.test.exercicios1.main;
 
-import pedro.ProjetoJava.javacore.Ycollections.test.exercicios.dominios.Agenda;
-import pedro.ProjetoJava.javacore.Ycollections.test.exercicios.dominios.Contato;
+import pedro.ProjetoJava.javacore.Ycollections.test.exercicios1.dominios.Agenda;
+import pedro.ProjetoJava.javacore.Ycollections.test.exercicios1.dominios.Contato;
 
 public class ex006 {
     public static void main(String[] args) {

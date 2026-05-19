@@ -1,6 +1,6 @@
-package pedro.ProjetoJava.javacore.Ycollections.test.exercicios.main;
+package pedro.ProjetoJava.javacore.Ycollections.test.exercicios1.main;
 
-import pedro.ProjetoJava.javacore.Ycollections.test.exercicios.dominios.Cliente;
+import pedro.ProjetoJava.javacore.Ycollections.test.exercicios1.dominios.Cliente;
 
 import java.time.LocalTime;
 import java.util.ArrayList;

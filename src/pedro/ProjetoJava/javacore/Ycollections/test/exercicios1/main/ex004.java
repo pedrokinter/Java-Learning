@@ -1,7 +1,7 @@
-package pedro.ProjetoJava.javacore.Ycollections.test.exercicios.main;
+package pedro.ProjetoJava.javacore.Ycollections.test.exercicios1.main;
 
-import pedro.ProjetoJava.javacore.Ycollections.test.exercicios.dominios.ResultadoTarefas;
-import pedro.ProjetoJava.javacore.Ycollections.test.exercicios.dominios.Tarefa;
+import pedro.ProjetoJava.javacore.Ycollections.test.exercicios1.dominios.ResultadoTarefas;
+import pedro.ProjetoJava.javacore.Ycollections.test.exercicios1.dominios.Tarefa;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

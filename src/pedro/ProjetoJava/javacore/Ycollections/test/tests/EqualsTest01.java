@@ -8,8 +8,8 @@ public class EqualsTest01 {
         String nome2 = new String("Pedro"); // memoria heap
         // retorna false
 
-        Smartphone s1 = new Smartphone("iphone", "123");
-        Smartphone s2 = new Smartphone("iphone", "123");
+        Smartphone s1 = new Smartphone("iphone", "123", 100.0);
+        Smartphone s2 = new Smartphone("iphone", "123", 100.0);
         System.out.println(s1.equals(s2)); // so serve pro numero de lote nesse caso, entao se eu mudar o nome
         // ele vai retornar true
 

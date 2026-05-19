@@ -7,9 +7,9 @@ import java.util.List;
 
 public class SmartphoneListTest01 {
     public static void main(String[] args) {
-        Smartphone smartphone = new Smartphone("android", "1023134123");
-        Smartphone smartphone2 = new Smartphone("iphone", "1ABDE123");
-        Smartphone smartphone3 = new Smartphone("windows phone", "SIX7SEVENSIX1023");
+        Smartphone smartphone = new Smartphone("android", "1023134123", 200.0);
+        Smartphone smartphone2 = new Smartphone("iphone", "1ABDE123", 200.0);
+        Smartphone smartphone3 = new Smartphone("windows phone", "SIX7SEVENSIX1023", 200.0);
 
         List<Smartphone> lista = new ArrayList<>();
 
@@ -21,7 +21,7 @@ public class SmartphoneListTest01 {
             System.out.println(smartphones);
         }
 
-        Smartphone s4 = new Smartphone("iphone", "1ABDE123");
+        Smartphone s4 = new Smartphone("iphone", "1ABDE123", 200.0);
 
         System.out.println(lista.contains(s4));
         int indexS4 = lista.indexOf(s4);

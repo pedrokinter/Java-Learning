@@ -3,10 +3,12 @@ package pedro.ProjetoJava.javacore.Ycollections.test.Dominios;
 public class Smartphone {
     private String nome;
     private String numeroDeLote;
+    private double preco;
 
-    public Smartphone(String nome, String numeroDeLote) {
+    public Smartphone(String nome, String numeroDeLote, double preco) {
         this.nome = nome;
         this.numeroDeLote = numeroDeLote;
+        this.preco = preco;
     }
 
     // tem que ser reflexivo -> x.equals(x) tem que ser true para tudo diferente de null
@@ -55,5 +57,22 @@ public class Smartphone {
 
     public void setNumeroDeLote(String numeroDeLote) {
         this.numeroDeLote = numeroDeLote;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+    @Override
+    public String toString() {
+        return "Smartphone{" +
+                "nome='" + nome + '\'' +
+                ", numeroDeLote='" + numeroDeLote + '\'' +
+                ", preco=" + preco +
+                '}';
     }
 }

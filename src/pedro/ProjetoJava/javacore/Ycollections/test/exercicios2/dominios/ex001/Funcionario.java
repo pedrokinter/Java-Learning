@@ -1,13 +1,5 @@
-package pedro.ProjetoJava.javacore.Ycollections.test.exercicios2.dominios;
+package pedro.ProjetoJava.javacore.Ycollections.test.exercicios2.dominios.ex001;
 
-import java.util.Comparator;
-
-class salarioComparator implements Comparator<Funcionario> {
-    @Override
-    public int compare(Funcionario o1, Funcionario o2) {
-        return Double.compare(o1.getSalario(), o2.getSalario());
-    }
-}
 
 public class Funcionario {
     private String nome;
@@ -43,15 +35,6 @@ public class Funcionario {
     public void setSalario(double salario) {
         this.salario = salario;
     }
-
-
-    Comparator<Funcionario> departamentoComparator = new Comparator<Funcionario>() {
-        @Override
-        public int compare(Funcionario o1, Funcionario o2) {
-            return o1.getDepartamento().compareToIgnoreCase(o2.getDepartamento()); // retornar por salario decrescente
-            // aq tambem
-        }
-    };
 
     @Override
     public String toString() {

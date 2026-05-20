@@ -1,4 +1,4 @@
-package pedro.ProjetoJava.javacore.Ycollections.test.exercicios2.dominios;
+package pedro.ProjetoJava.javacore.Ycollections.test.exercicios2.dominios.ex001;
 
 import java.util.Comparator;
 

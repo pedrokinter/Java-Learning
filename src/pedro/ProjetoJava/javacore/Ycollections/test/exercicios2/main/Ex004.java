@@ -2,6 +2,7 @@ package pedro.ProjetoJava.javacore.Ycollections.test.exercicios2.main;
 
 import java.util.ArrayList;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
@@ -16,12 +17,16 @@ class numsDecrescente implements Comparator<Integer> {
 public class Ex004 {
     public static void main(String[] args) {
         int[] numeros = {5, -3, 8, -1, 0, 12, -7, 4, 9, -2};
-
-        System.out.println(removerComIf(numeros));
+        System.out.println("Array normal sem ser ordenado e com negativos: ");
+        System.out.println(Arrays.toString(numeros));
+        System.out.println("--------------");
+        System.out.println("Array ordenado e com negativos: ");
+        System.out.println(Arrays.toString(removerComIf(numeros)));
     }
 
-    public static int[]  removerComIf(int[] numeros){
+    public static Integer[] removerComIf(int[] numeros){
         List<Integer> listaNumeros = new ArrayList<>(List.of());
+
         for(int numero : numeros){
             listaNumeros.add(numero);
         }
@@ -30,8 +35,8 @@ public class Ex004 {
 
         listaNumeros.sort(new numsDecrescente());
 
-
-        int[] a = {0};
-        return a;
+        return listaNumeros.toArray(new Integer[0]);
+        // tentei fazer com o tipo primitivo int mas não ia de nenhuma maneira, então preferi passar com Integer
+        // pra facilitar o trabalho, até pq arraylist precisa de um objeto
     }
 }

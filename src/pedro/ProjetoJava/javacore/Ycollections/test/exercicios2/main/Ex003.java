@@ -8,8 +8,11 @@ public class Ex003 {
         List<String> list = new ArrayList<>();
         list.add("relatorio.pdf");
         list.add("imagem.png");
+        list.add("relatorioQuatro.pdf");
         list.add("pedro.png");
-        list.add("pedro.jpg");
+        list.add("pedra.jpg");
+        list.add("aaaa.jpg");
+        list.add("3123124.jpg");
 
 
         System.out.println(removerComIterator(list));
@@ -18,12 +21,26 @@ public class Ex003 {
 
     public static String removerComIterator(List<String> list) {
         Iterator<String> iteratorPng = list.iterator();
-        Iterator<String> iteratorJpg = list.iterator();
 
         while (iteratorPng.hasNext()) {
-            if(iteratorPng.next().contains(".png")){
-                iteratorPng.remove();
+            String nome = iteratorPng.next();  // puxa o next pra string Nome
+            if (nome.contains(".png")) {
+                iteratorPng.remove(); // se tiver .png ela ja remove, se não continua
             }
+
+            if (nome.contains(".jpg")) { // se não tiver .jpg ele ignora e refaz o loop
+                iteratorPng.remove(); // se tiver ja remove
+                if (iteratorPng.hasNext()) { // confere se o iterator tem mais item
+                    if (iteratorPng.next().contains(".jpg")) { // se tiver, confere se o proximo item tem jpg
+                        // se nao tiver jpg, ignora e segue o loop
+                        iteratorPng.remove();
+                        // se tiver ja remove
+                    }
+                }
+            }
+
+            // nao entendi direito o porque do if aninhado não estar funcionando, mas assim que eu tirei ele
+            // do aninhamento funcionou, então é isso
         }
         return list.toString();
     }

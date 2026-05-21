@@ -53,24 +53,29 @@ public class Ex006 {
             throw new IllegalArgumentException("Temperaturas vazias!!");
         }
 
-        menor = temperaturas.ceiling(25.0);
+        menor = temperaturas.higher(25.0);
 
         return menor;
     }
 
-    public static List<Double> temperaturasEntre20e28(NavigableSet<Double> temperaturas) {
-        List<Double> lista = new ArrayList<>();
-        for (Double temperatura : temperaturas) {
-            if (temperatura >= 20 && temperatura <= 28) {
-                lista.add(temperatura);
-            }
-        }
+    public static NavigableSet<Double> temperaturasEntre20e28(NavigableSet<Double> temperaturas) {
 
-        return lista;
+//        for (Double temperatura : temperaturas) {
+//            if (temperatura >= 20 && temperatura <= 28) {
+//                lista.add(temperatura);
+//            }
+//        }
+
+        return temperaturas.subSet(20.0, true, 28.0, true);
+
     }
 
     public static List<Double> anteriorEPosterior(NavigableSet<Double> temperaturas, double temperatura) {
         List<Double> lista = new ArrayList<>();
+
+
+        lista.add(temperaturas.higher(temperatura));
+        lista.add(temperaturas.lower(temperatura));
         return lista;
     }
 }

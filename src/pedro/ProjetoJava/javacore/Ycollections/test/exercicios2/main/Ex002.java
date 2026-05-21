@@ -20,7 +20,7 @@ public class Ex002 {
         Produto p2 = new Produto("guarda chuva", 12.0, 12);
         Produto p3 = new Produto("trento", 6.0, 5);
         Produto p4 = new Produto("lacta", 20.0, 2);
-        Produto p5 = new Produto("pedro", 20.0, 2);
+        Produto p5 = new Produto("pedro", 20.0, 99);
         List<Produto> produtos = new ArrayList<>();
 
         produtos.add(p1);
@@ -28,7 +28,7 @@ public class Ex002 {
         produtos.add(p3);
         produtos.add(p4);
 
-        produtos.sort(Comparator.comparing(Produto::getCodigo));
+        produtos.sort(new codigoComparator());
 
         for (Produto produto : produtos) {
             System.out.println(produto);

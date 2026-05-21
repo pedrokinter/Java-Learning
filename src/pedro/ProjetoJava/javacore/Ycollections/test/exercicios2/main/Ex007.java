@@ -5,15 +5,16 @@ import java.util.Map;
 
 public class Ex007 {
     public static void main(String[] args) {
-        String texto = "aaaaabb";
+        String texto = "Pedro Henrique";
         contadorDePalavras(texto);
     }
 
     public static void contadorDePalavras(String texto){
-        int contagem = 0;
-        Map<Character, Integer> palavras = new HashMap<>();
-        for (int i = 0; i < texto.length(); i++) {
-            palavras.put(texto.charAt(i), contagem);
+        Map<String, Integer> palavras = new HashMap<>();
+        texto = texto.toUpperCase();
+            for (int i = 0; i < texto.length(); i++) {
+                
+            }
         }
     }
-}
+

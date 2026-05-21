@@ -1,5 +1,9 @@
 package pedro.ProjetoJava.javacore.Ycollections.test.exercicios2.dominios.ex010;
 
+import java.util.EnumSet;
+import java.util.Enumeration;
+import java.util.Objects;
+
 public class Paciente implements Comparable<Paciente>{
     private String nome;
     private int idade;
@@ -46,8 +50,15 @@ public class Paciente implements Comparable<Paciente>{
                 '}';
     }
 
+
+
     @Override
     public int compareTo(Paciente o) {
-       return Integer.compare(this.idade, o.idade);
+        int prio = o.getPrioridade().compareTo(this.prioridade);
+        if (prio != 0) return prio;
+        // nao entendi, vou retornar depois, pq ele nao ta organizando pela ordem ordinal dos enums
+        // e eu tambem to achando que é mais facil implementar um Comparator do que o Comparable
+        // masjaja eu vejo isso
+        return Integer.compare(o.getIdade(), this.idade);
     }
 }

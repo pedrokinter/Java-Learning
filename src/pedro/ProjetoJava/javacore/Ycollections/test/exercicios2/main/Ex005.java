@@ -21,13 +21,15 @@ public class Ex005 {
         System.out.println(emailsOrdemAlfabetica(emails));
     }
 
-    public static Set<String> emailsSemDuplicatas(List<String> emails) {
+    public static List<String> emailsSemDuplicatas(List<String> emails) {
         Set<String> emailsSemDuplicatas = new LinkedHashSet<>(); // linkedhashset mantem a ordem de inserção
         // e a interface set e linkedhashset não aceitam duplicatas, então é so transformar de list para set e jaera
         // sem contar q tbm preserva a ordem de inserção
         emailsSemDuplicatas.addAll(emails);
 
-        return emailsSemDuplicatas;
+        return List.copyOf(emailsSemDuplicatas);
+
+        // melhor retornar lista para manter o contrato e não quebrar a ordem de inserção
     }
 
     public static NavigableSet<String> emailsOrdemAlfabetica(List<String> emails) {

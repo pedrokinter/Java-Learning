@@ -25,7 +25,7 @@ public class Ex004 {
     }
 
     public static Integer[] removerComIf(int[] numeros){
-        List<Integer> listaNumeros = new ArrayList<>(List.of());
+        List<Integer> listaNumeros = new ArrayList<>();
 
         for(int numero : numeros){
             listaNumeros.add(numero);
@@ -34,6 +34,8 @@ public class Ex004 {
         listaNumeros.removeIf(numero1 -> numero1 < 0);
 
         listaNumeros.sort(new numsDecrescente());
+
+
 
         return listaNumeros.toArray(new Integer[0]);
         // tentei fazer com o tipo primitivo int mas não ia de nenhuma maneira, então preferi passar com Integer

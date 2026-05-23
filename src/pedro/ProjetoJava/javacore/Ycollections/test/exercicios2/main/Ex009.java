@@ -21,10 +21,9 @@ public class Ex009 {
         listarPorValor(estoque, 10);
     }
 
-    public static void adicionar(LinkedHashMap<String, Integer> estoque, String nome, int quantidade) {
+    public static void adicionar(Map<String, Integer> estoque, String nome, int quantidade) {
         if (nome.isBlank() || quantidade < 0) {
-            System.out.println("nome vazio ou quantidade menor que zero!");
-            return;
+            throw new IllegalArgumentException("nome em branco ou quantidade < 0");
         }
 
         estoque.put(nome, estoque.getOrDefault(nome, 0) + quantidade); // pelo o que eu entendi
@@ -33,10 +32,9 @@ public class Ex009 {
     }
 
 
-    public static void atualizar(LinkedHashMap<String, Integer> estoque, String nome, int quantidade) {
+    public static void atualizar(Map<String, Integer> estoque, String nome, int quantidade) {
         if (nome.isBlank() || quantidade < 0) {
-            System.out.println("nome vazio ou quantidade menor que zero!");
-            return;
+            throw new IllegalArgumentException("nome em branco ou quantidade < 0");
         }
 
         if (estoque.containsKey(nome)) {
@@ -45,16 +43,17 @@ public class Ex009 {
     }
 
 
-    public static void remover(LinkedHashMap<String, Integer> estoque, String nome) {
+    public static void remover(Map<String, Integer> estoque, String nome) {
         if (nome.isBlank() || estoque.isEmpty()) {
-            System.out.println("Estoque vazio ou nome vazio!");
+            throw new IllegalArgumentException("nome em branco");
+
         }
         estoque.remove(nome);
     }
 
-    public static void listar(LinkedHashMap<String, Integer> estoque) {
+    public static void listar(Map<String, Integer> estoque) {
         if (estoque.isEmpty()) {
-            System.out.println("Estoque vazio!");
+            System.out.println("estoque vazio");
             return;
         }
 
@@ -64,7 +63,7 @@ public class Ex009 {
 
     }
 
-    public static void listarPorValor(LinkedHashMap<String, Integer> estoque, int quantidade) {
+    public static void listarPorValor(Map<String, Integer> estoque, int quantidade) {
         if (estoque.isEmpty() || quantidade <= 0) {
             System.out.println("Estoque vazio ou quantidade menor igual a zero!");
             return;

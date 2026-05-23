@@ -2,14 +2,11 @@ package pedro.ProjetoJava.javacore.Ycollections.test.exercicios2.main;
 
 import pedro.ProjetoJava.javacore.Ycollections.test.exercicios1.dominios.Estudante;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Ex008 {
     public static void main(String[] args) {
-        Map<String, List<Estudante>> todasAsTurmas = new HashMap<>();
+        Map<String, List<Estudante>> todasAsTurmas = new LinkedHashMap<>();
         List<Estudante> turma1 = new ArrayList<>();
         List<Estudante> turma2 = new ArrayList<>();
         List<Estudante> turma3 = new ArrayList<>();
@@ -38,12 +35,11 @@ public class Ex008 {
         adicionarAlunoATurma(new Estudante("teste", 111, 6.9), null, todasAsTurmas);
 
         System.out.println("----------------------------------");
-        System.out.println("Lista de todas as turmas!!: ");
-        listarAlunosDeUmaTurma(todasAsTurmas);
-
+        System.out.println("Lista de uma turma especifica: ");
+        System.out.println(listarAlunosDeUmaTurma(todasAsTurmas, "turma 1"));
         System.out.println("---------------------------------");
         System.out.println("Escolha uma turma para exibir a média abaixo:");
-        System.out.println("Média final da turma escolhida: "+calcularMediaTurma(todasAsTurmas, turma1));
+        System.out.println("Média final da turma escolhida: "+calcularMediaTurma(turma1));
         System.out.println("---------------------------------");
 
 
@@ -60,38 +56,24 @@ public class Ex008 {
         if (turma == null) {
             turma = new ArrayList<>();
             turma.add(estudante);
-            turmas.put("turma " + turma.size() + 1,  turma);
+            turmas.put("turma " + (turmas.size() + 1),  turma);
         } else {
             turma.add(estudante);
-        }// acho que aqui ta certo, mas e caso a turma ja estiver adicionada fora do metodo mas nao estar no mapa?
-        // to pensando em como resolver isso
-
-    }
-
-    public static void listarAlunosDeUmaTurma(Map<String, List<Estudante>> turma) {
-        for (Map.Entry<String, List<Estudante>> entry : turma.entrySet()) {
-            System.out.println(entry.getKey()); // entender por que ele ta fazendo da ultima turma invés de fazer pela
-            // primeira
-
-            // e agora ele ta fazendo de 2 em 2, nao to entendendo pq n ta em ordem do 1 até o fim
-            for (Estudante estudante : entry.getValue()) {
-                System.out.println(estudante.getNome());
-            }
-            System.out.println();
         }
-
     }
 
-    public static double calcularMediaTurma(Map<String, List<Estudante>> mapa, List<Estudante> turma) {
+    public static List<Estudante> listarAlunosDeUmaTurma(Map<String, List<Estudante>> turma, String nomeTurma) {
+
+        return turma.get(nomeTurma);
+    }
+
+    public static double calcularMediaTurma(List<Estudante> turma) {
         double soma = 0;
-        for (Map.Entry<String, List<Estudante>> entry : mapa.entrySet()) {
-            if (entry.getValue().equals(turma)) {
-                for (Estudante estudante : entry.getValue()) {
-                    soma += estudante.getNotaFinal();
-                }
 
-            }
+        for (Estudante estudante : turma) {
+            soma += estudante.getNotaFinal();
         }
+
         return soma / turma.size();
     }
 
@@ -117,7 +99,7 @@ public class Ex008 {
         }
 
         for (Map.Entry<String, Double> entry : mediaTurmas.entrySet()) {
-            if (entry.getValue() == maior) {
+            if (Double.compare(entry.getValue(), maior) == 0) {
                 return entry.getKey() + "-> média final: " +entry.getValue();
             }
         }

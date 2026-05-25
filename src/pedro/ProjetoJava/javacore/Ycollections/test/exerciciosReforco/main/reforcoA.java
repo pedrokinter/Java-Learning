@@ -1,7 +1,7 @@
 package pedro.ProjetoJava.javacore.Ycollections.test.exerciciosReforco.main;
 
-import pedro.ProjetoJava.javacore.Ycollections.test.exerciciosReforco.dominios.RegistroSenhas;
-import pedro.ProjetoJava.javacore.Ycollections.test.exerciciosReforco.dominios.Senha;
+import pedro.ProjetoJava.javacore.Ycollections.test.exerciciosReforco.dominios.A.RegistroSenhas;
+import pedro.ProjetoJava.javacore.Ycollections.test.exerciciosReforco.dominios.A.Senha;
 
 public class reforcoA {
     public static void main(String[] args) {

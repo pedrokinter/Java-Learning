@@ -1,0 +1,22 @@
+package pedro.ProjetoJava.Revisão.exerciciosRevisaoInternetP3.Polimorfismo.servicosPolimorfismo4;
+
+import pedro.ProjetoJava.Revisão.exerciciosRevisaoInternetP3.Polimorfismo.dominiosPolimorfismo4.Desconto;
+import pedro.ProjetoJava.Revisão.exerciciosRevisaoInternetP3.Polimorfismo.dominiosPolimorfismo4.ProdutoFisico;
+
+public class Roupa extends ProdutoFisico implements Desconto {
+    public Roupa(String nome, double preco, int estoque, double pesoKg, String dimensoesCm) {
+        super(nome, preco, estoque, pesoKg, dimensoesCm);
+    }
+
+    @Override
+    public double aplicarDesconto(double valor) {
+        double desconto = 0.30 * valor;
+        return getPreco() - desconto;
+
+    }
+
+    @Override
+    public String getTipoDesconto() {
+        return "Promoção";
+    }
+}
